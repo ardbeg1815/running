@@ -1,59 +1,61 @@
-<div class="header">
-    <div class=title>Running!</div>
-    <%= image_tag 'マラソン.png' %>
-    <a class="post" href="/distances/new">入力する</a>
-</div>
+<div class="all">
+  <div class="header">
+      <div class=title>Running!</div>
+      <%= image_tag 'マラソン.png' %>
+      <a class="post" href="/distances/new">入力する</a>
+  </div>
 
-<% a = 0 %>
-<% b = 0%>
-<% @distances.each do |distance| %>
-<div class="main">
-  <div class="memo">
-    <div>日　付　　　　　:　<%= distance.month %>月<%= distance.date %>日</div>
-    <div>走行距離　　　　:　<%= distance.distance %>km</div>
-    <div>消費カロリー　　:　<%= distance.distance * distance.weight %>kcal</div>
-    <div>総合距離　　　　:　<%=  distance.distance + a %>km</div>
-    <% a = distance.distance + a %>
-    <% b = distance.distance * distance.weight + b %>
-    <div>総消費カロリー　:　<%= b %>kcal</div>
-    <div class="button">
-      <%= link_to '削除する', distance_path(distance.id), method: :delete, class: "delete" %>
+  <% a = 0 %>
+  <% b = 0%>
+  <% @distances.each do |distance| %>
+  <div class="main">
+    <div class="memo">
+      <div>日　付　　　　　:　<%= distance.month %>月<%= distance.date %>日</div>
+      <div>走行距離　　　　:　<%= distance.distance %>km</div>
+      <div>消費カロリー　　:　<%= distance.distance * distance.weight %>kcal</div>
+      <div>総合距離　　　　:　<%=  distance.distance + a %>km</div>
+      <% a = distance.distance + a %>
+      <% b = distance.distance * distance.weight + b %>
+      <div>総消費カロリー　:　<%= b %>kcal</div>
+      <div class="button">
+        <%= link_to '削除する', distance_path(distance.id), method: :delete, class: "delete" %>
+      </div>
+    </div>
+    <div class="food">
+      <div>今回の消費カロリー</div>
+          <% if (distance.distance * distance.weight) < 10 %>
+            <%= image_tag '10kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 40 %>
+            <%= image_tag '40kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 80 %>
+            <%= image_tag '80kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 100 %>
+            <%= image_tag '100kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 200 %>
+            <%= image_tag '200kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 300 %>
+            <%= image_tag '300kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 400 %>
+            <%= image_tag '400kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 500 %>
+            <%= image_tag '500kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 600 %>
+            <%= image_tag '600kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 700 %>
+            <%= image_tag '700kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 800 %>
+            <%= image_tag '800kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 900 %>
+            <%= image_tag '900kcal.png', class: 'foods' %>
+          <% elsif (distance.distance * distance.weight) < 1000 %>
+            <%= image_tag '1000kcal.png', class: 'foods' %>
+          <% else %>
+            <%= image_tag 'over.png', class: 'foods' %>
+          <%end%>
     </div>
   </div>
-  <div class="food">
-    <div>今回の消費カロリー</div>
-        <% if (distance.distance * distance.weight) < 10 %>
-          <%= image_tag '10kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 40 %>
-          <%= image_tag '40kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 80 %>
-          <%= image_tag '80kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 100 %>
-          <%= image_tag '100kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 200 %>
-          <%= image_tag '200kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 300 %>
-          <%= image_tag '300kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 400 %>
-          <%= image_tag '400kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 500 %>
-          <%= image_tag '500kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 600 %>
-          <%= image_tag '600kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 700 %>
-          <%= image_tag '700kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 800 %>
-          <%= image_tag '800kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 900 %>
-          <%= image_tag '900kcal.png', class: 'foods' %>
-        <% elsif (distance.distance * distance.weight) < 1000 %>
-          <%= image_tag '1000kcal.png', class: 'foods' %>
-        <% else %>
-          <%= image_tag 'over.png', class: 'foods' %>
-        <%end%>
-  </div>
-</div>
-<%end%>
+  <%end%>
 
-<div class="footer">
+  <div class="footer">
+  </div>
 </div>
