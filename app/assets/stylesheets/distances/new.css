@@ -1,0 +1,56 @@
+.new{
+  text-align: center;
+  width: 600px;
+}
+
+.comment{
+  font-size: 20px;
+  color: red;  
+}
+
+.main_new{
+  background-color: aqua;
+  height: 400px;
+  padding: 10px;
+  border-color: black;
+  border-style: solid;
+}
+
+.month{
+  font-size: 30px;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  margin: 5px;
+}
+
+.date{
+  font-size: 30px;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  margin: 10px;
+}
+
+.distance{
+  font-size: 30px;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  margin: 10px;
+}
+
+.weight{
+  font-size: 30px;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  margin: 10px;
+}
+
+.submit{
+  height: 100px;
+  width: 300px;
+  font-size: 30px;
+  margin: 30px;
+}
