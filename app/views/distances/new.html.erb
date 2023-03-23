@@ -1,0 +1,9 @@
+<h3>新規入力</h3>
+<%= form_with(model: @distance, local: true) do |form| %>
+  <div class= main_new>
+    <div><%= form.text_field :month, placeholder: "月" %>月<%= form.text_field :date, placeholder: "日" %>日</div>
+    <div><%= form.text_field :distance, placeholder: "距離" %></div>
+    <div><%= form.text_field :weight, placeholder: "体重" %></div>
+    <div><%= form.submit "保存" %></div>
+  </div>
+<% end %>
