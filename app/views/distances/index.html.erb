@@ -1,5 +1,7 @@
 <div class="header">
-  <a class="post" href="/distances/new">入力する</a>
+    <div class=title>Running!</div>
+    <%= image_tag 'マラソン.png' %>
+    <a class="post" href="/distances/new">入力する</a>
 </div>
 
 <% a = 0 %>
@@ -14,7 +16,9 @@
     <% a = distance.distance + a %>
     <% b = distance.distance * distance.weight + b %>
     <div>総消費カロリー　:　<%= b %>kcal</div>
-    <div class="delete"><%= link_to '削除する', distance_path(distance.id), method: :delete  %></div>
+    <div class="button">
+      <%= link_to '削除する', distance_path(distance.id), method: :delete, class: "delete" %>
+    </div>
   </div>
   <div class="food">
     <div>今回の消費カロリー</div>
