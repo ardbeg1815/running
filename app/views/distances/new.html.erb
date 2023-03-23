@@ -1,9 +1,11 @@
-<h3>新規入力</h3>
+<h1 class="new">新規入力
+<p class="comment">お疲れ様でした！本日の記録を入力してください。</p>
 <%= form_with(model: @distance, local: true) do |form| %>
   <div class= main_new>
-    <div><%= form.text_field :month, placeholder: "月" %>月<%= form.text_field :date, placeholder: "日" %>日</div>
-    <div><%= form.text_field :distance, placeholder: "距離" %></div>
-    <div><%= form.text_field :weight, placeholder: "体重" %></div>
-    <div><%= form.submit "保存" %></div>
+    <%= form.text_field :month, placeholder: "12", class:"month" %>月
+    <%= form.text_field :date, placeholder: "31", class:"date" %>日<br>
+    <%= form.text_field :distance, placeholder: "距　離", class:"distance"%>km
+    <%= form.text_field :weight, placeholder: "体　重", class:"weight" %>kg<br>
+    <%= form.submit "保　存", class:"submit" %></h1>
   </div>
 <% end %>
