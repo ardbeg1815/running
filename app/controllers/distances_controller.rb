@@ -10,11 +10,13 @@ class DistancesController < ApplicationController
 
   def create
     Distance.create(distance_params)
+    redirect_to root_path
   end
 
   def destroy
     distance = Distance.find(params[:id])
     distance.destroy
+    redirect_to root_path
   end
 
   private
