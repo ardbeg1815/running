@@ -18,6 +18,7 @@
       <% b = distance.distance * distance.weight + b %>
       <div>総消費カロリー　:　<%= b %>kcal</div>
       <div class="button">
+        <%= link_to '編集する', edit_distance_path(distance.id), method: :get, class: "edit" %>
         <%= link_to '削除する', distance_path(distance.id), method: :delete, class: "delete" %>
       </div>
     </div>
