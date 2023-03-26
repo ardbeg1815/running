@@ -9,8 +9,12 @@ class DistancesController < ApplicationController
   end
 
   def create
-    Distance.create(distance_params)
-    redirect_to root_path
+    @distance = Distance.create(distance_params)
+    if @distance.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -24,9 +28,13 @@ class DistancesController < ApplicationController
   end
 
   def update
-    distance = Distance.find(params[:id])
-    distance.update(distance_params)
-    redirect_to root_path
+    @distance = Distance.find(params[:id])
+    @distance.update(distance_params)
+    if @distance.save
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
