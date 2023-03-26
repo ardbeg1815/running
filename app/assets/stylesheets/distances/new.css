@@ -4,9 +4,17 @@
   margin: 0 auto;
 }
 
+.error{
+  list-style: none;
+  font-size: 15px;
+  color: red;
+  text-align: left;
+}
+
 .comment{
+  text-align: center;
   font-size: 20px;
-  color: red;  
+  color: red;
 }
 
 .main_new{
@@ -15,6 +23,11 @@
   padding: 10px;
   border-color: black;
   border-style: solid;
+}
+
+.month_date{
+  display: flex;
+  justify-content: space-around;
 }
 
 .month{
@@ -31,6 +44,11 @@
   height: 100px;
   text-align: center;
   margin: 10px;
+}
+
+.distance_weight{
+  display: flex;
+  justify-content: space-around;
 }
 
 .distance{
@@ -54,4 +72,8 @@
   width: 300px;
   font-size: 30px;
   margin: 30px;
+}
+
+.moji{
+  margin-top: 35px;
 }
