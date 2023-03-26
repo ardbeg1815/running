@@ -1,13 +1,27 @@
 <div class="new_all">
   <h1 class="new">編　集
+
+  <% if @distance.errors.any? %>
+    <div class= "error">
+      <ul>
+        <% @distance.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <%end%>
+      </ul>
+    </div>
+  <% end %>
+
   <p class="comment">記録を編集してください。</p>
   <%= form_with(model: @distance, local: true) do |form| %>
-    <div class= main_new>
-      <%= form.text_field :month, placeholder: "1", class:"month" %>月
-      <%= form.text_field :date, placeholder: "1", class:"date" %>日<br>
-      <%= form.text_field :distance, placeholder: "距　離", class:"distance"%>km
-      <%= form.text_field :weight, placeholder: "体　重", class:"weight" %>kg<br>
-      <%= form.submit "編　集", class:"submit" %></h1>
-    </div>
+    <div class= "main_new">
+      <div class = "month_date">
+        <%= form.text_field :month, placeholder: "month", class:"month" %><div class="moji">月</div>
+        <%= form.text_field :date, placeholder: "date", class:"date" %><div class="moji">日</div>
+      </div>
+      <div class = "distance_weight" >
+        <%= form.text_field :distance, placeholder: "distance", class:"distance"%><div class="moji">km</div>
+        <%= form.text_field :weight, placeholder: "weight", class:"weight" %><div class="moji">kg</div>
+      </div>
+      <%= form.submit "保　存", class:"submit" %></h1>
   <% end %>
 </div>
