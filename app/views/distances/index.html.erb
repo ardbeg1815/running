@@ -12,11 +12,11 @@
     <div class="memo">
       <div>日　付　　　　　:　<%= distance.month %>月<%= distance.date %>日</div>
       <div>走行距離　　　　:　<%= distance.distance %>km</div>
-      <div>消費カロリー　　:　<%= distance.distance * distance.weight %>kcal</div>
+      <div>消費カロリー　　:　<%= (distance.distance * distance.weight).round(1) %>kcal</div>
       <div>総合距離　　　　:　<%= distance.distance + a %>km</div>
       <% a = distance.distance + a %>
       <% b = distance.distance * distance.weight + b %>
-      <div>総消費カロリー　:　<%= b %>kcal</div>
+      <div>総消費カロリー　:　<%= b.round(1) %>kcal</div>
       <div class="button">
         <%= link_to '編集する', edit_distance_path(distance.id), method: :get, class: "edit" %>
         <%= link_to '削除する', distance_path(distance.id), method: :delete, class: "delete" %>
