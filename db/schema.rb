@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 2023_03_19_131018) do
   create_table "distances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "month"
     t.integer "date"
-    t.integer "distance"
-    t.integer "weight"
+    t.float "distance"
+    t.float "weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
