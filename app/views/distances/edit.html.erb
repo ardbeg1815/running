@@ -1,0 +1,13 @@
+<div class="new_all">
+  <h1 class="new">編　集
+  <p class="comment">記録を編集してください。</p>
+  <%= form_with(model: @distance, local: true) do |form| %>
+    <div class= main_new>
+      <%= form.text_field :month, placeholder: "12", class:"month" %>月
+      <%= form.text_field :date, placeholder: "31", class:"date" %>日<br>
+      <%= form.text_field :distance, placeholder: "距　離", class:"distance"%>km
+      <%= form.text_field :weight, placeholder: "体　重", class:"weight" %>kg<br>
+      <%= form.submit "保　存", class:"submit" %></h1>
+    </div>
+  <% end %>
+</div>
